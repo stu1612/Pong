@@ -9,6 +9,17 @@
     body {
       padding: 0;
       margin: 0;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    #start {
+      position: absolute;
+      bottom: 10%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 1rem 2rem;
+      cursor: pointer;
     }
   </style>
   <script src="../p5.js"></script>
@@ -17,6 +28,8 @@
 </head>
 
 <body>
+
+  <button class="start" id='start'>Play</button>
 </body>
 
 </html>

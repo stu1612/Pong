@@ -2,12 +2,22 @@
 
 "use strict";
 
-// Random Ball Placement
-var xBall = Math.floor(Math.random() * 300) + 50;
-var yBall = 50;
-var xSpeed = (2, 7);
-var ySpeed = (-7, -2);
-var score = 0
+let xBall;
+let yBall;
+let xSpeed;
+let ySpeed;
+let score;
+
+function randomBallPlacment() {
+  xBall = Math.floor(Math.random() * 300) + 50;
+  yBall = 50;
+  xSpeed = (2, 7);
+  ySpeed = (-7, -2);
+  score = 0
+}
+
+
+
 
 // Canvas
 function setup() {
@@ -27,9 +37,9 @@ function draw() {
 
   //Functions
   move();
-  display();
   bounce();
-  //resetBall();
+  display()
+  resetBall();
   paddle();
 
   //Score
@@ -37,6 +47,12 @@ function draw() {
   textSize(24);
   text("Score: " + score, 10, 25);
 }
+
+
+// Random Ball Placement
+
+
+
 // Ball Functions
 function move() {
   xBall += xSpeed;
@@ -58,13 +74,13 @@ function bounce() {
 
 
 // Reset Ball
-//function resetBall() {
-//  if (yBall >= 400 ||
-//    yBall > 400 - 10) {
-//    ySpeed = 4;
-// }
-
-//}
+function resetBall() {
+  if (yBall >= 385 ||
+    yBall > 400 - 15) {
+    ySpeed = 4;
+    randomBallPlacment();
+  }
+}
 
 function display() {
   fill('#d9c3f7');
@@ -82,3 +98,5 @@ function paddle() {
 
   }
 }
+
+randomBallPlacment();
