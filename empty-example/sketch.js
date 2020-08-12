@@ -4,19 +4,14 @@
 
 let width = window.innerWidth;
 let height = window.innerHeight;
+let bg;
 
 function setup() {
-  createCanvas(width, height, WEBGL);
-
+  bg = loadImage('../empty-example/img/sea-bg.jpg')
+  createCanvas(width, height);
 }
 
 function draw() {
-  background(0);
-  stroke('rgb(0,255,0)');
-  strokeWeight(5);
-  rotateX(40);
-  rotateY(40);
-  noFill(0);
-  box(100);
+  background(bg);
 
 }
