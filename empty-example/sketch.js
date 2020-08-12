@@ -2,16 +2,18 @@
 
 "use strict";
 
-let width = window.innerWidth;
-let height = window.innerHeight;
-let bg;
+let ballRadius = 30;
+let ballPositionX = 200;
+let ballPositionY = 300;
 
 function setup() {
-  bg = loadImage('../empty-example/img/sea-bg.jpg')
-  createCanvas(width, height);
+  createCanvas(windowWidth, windowHeight);
 }
 
 function draw() {
-  background(bg);
+  background(2, 0, 36);
+  fill(255);
+  noStroke();
+  ellipse(ballPositionX, ballPositionY, ballRadius, ballRadius);
 
 }
