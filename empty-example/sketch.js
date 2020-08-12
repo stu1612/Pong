@@ -11,7 +11,7 @@ var score = 0
 
 // Canvas
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(windowWidth, 400);
 }
 
 //Background
@@ -22,8 +22,8 @@ function draw() {
   background(0);
 
   // Paddle
-  fill('#ffffff');
-  rect(mouseX, 375, 90, 15);
+  fill('red');
+  rect(mouseX, 385, 90, 15);
 
   //Functions
   move();
@@ -47,11 +47,11 @@ function move() {
 function bounce() {
 
   if (xBall < 10 ||
-    xBall > 400 - 10) {
+    xBall > windowWidth - 10) {
     xSpeed *= -1;
   }
   if (yBall < 10 ||
-    yBall > 400 - 10) {
+    yBall > windowHeight - 10) {
     ySpeed *= -1;
   }
 }
@@ -75,7 +75,7 @@ function display() {
 function paddle() {
   if ((xBall > mouseX &&
     xBall < mouseX + 90) &&
-    (yBall + 10 >= 375)) {
+    (yBall + 10 >= 385)) {
     xSpeed *= -1;
     ySpeed *= -1;
     score++;
